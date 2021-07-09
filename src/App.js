@@ -50,7 +50,7 @@ function App() {
             if (A[i].id === id) {
                 setRows((prevState) => [...prevState, data])
             }
-            setRows((prevState) => [...prevState, data])
+            setRows((prevState) => [...prevState, A[i]])
         }
         return A
     }
@@ -72,7 +72,7 @@ function App() {
             .then((response) => response.json())
             .then((res) => {
                 setRows((prevState) => [...prevState, res])
-                rearrange(rows, id, res)
+                // rearrange(rows, id, res)
                 console.log("response: " + res)
                 setShow(!show)
             })
@@ -95,6 +95,7 @@ function App() {
             .then((response) => response.json())
             .then((res) => {
                 setRows((prevState) => [...prevState, res])
+                rearrange(rows, id, res)
                 console.log("response: " + res)
                 setShow(!show)
             })
